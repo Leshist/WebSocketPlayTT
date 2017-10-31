@@ -1,0 +1,14 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+GET     /                           controllers.HomeController.index
+
+GET     /ws                         controllers.WsController.ws
+
+# same as /ws but with SameOriginCheck to prevent Cross-Site WebSocket Hijacking
+# for more info see http://blog.dewhurstsecurity.com/2013/08/30/security-testing-html5-websockets.html
+GET     /ws2                        controllers.WsController.ws2
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
